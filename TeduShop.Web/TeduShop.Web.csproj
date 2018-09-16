@@ -4020,6 +4020,7 @@
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\admin\js\pages\" />
+    <Folder Include="GITHUBTEST\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,29 +1,26 @@
 ﻿@model IEnumerable<TeduShop.Web.Models.ProductCategoryViewModel>
 <div class="rsidebar span_1_of_left">
     <section class="sky-form">
-        <div class="product_right">
-
-            @foreach (var category in Model.Where(x => x.ParentID == null))
-            {
-                var childCategories = Model.Where(x => x.ParentID == category.ID);
+        @foreach (var category in Model.Where(x => x.ParentID == null))
+        {
+              
             <h3 class="m_2">@category.Name </h3>
-                if (childCategories.Count() > 0)
-                {
-
-                <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>
-                    @foreach (var childCategory in childCategories)
+            var childCategories = Model.Where(x => x.ParentID == category.ID);
+            <div class="row row1 scroll-pane">
+                <div class="col col-4">
+                    @if (childCategories.Count() > 0)
                     {
-                        <option value="0">@childCategory.Name</option>
-                      
+                        foreach (var childCategory in childCategories)
+                        {
+                            var url = "/" + childCategory.Alias + ".pc-" + childCategory.ID + ".html";
+                            <p><a  href="@url">@childCategory.Name</a></p>
+
+
+                        }
                     }
-
-                </select>
-
-                }
-
-            }
-
-        </div>
+                </div>
+            </div>
+        }
 
         <h4>components</h4>
         <div class="row row1 scroll-pane">

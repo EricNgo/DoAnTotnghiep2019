@@ -8,21 +8,17 @@
     <div class="parts1">
         @foreach (var product in Model.LastestProducts)
         {
+            var url = "/" + product.Alias + ".p-" + product.ID + ".html";
             <a href="single.html">
                 <div class="part-sec">
                     <div><img src="@product.Image" alt="@product.Name" /></div>
-                    @*<div class="part-info">
-            <a href="#"><h5>@product.Name<span>@product.Price.ToString("N0") $</span></h5></a>
-            <a class="add-cart" href="single.html">Quick View</a>
-            <a class="qck" href="single.html">BUY NOW</a>
-
-        </div>*@
                     <div class="bike-cost">
                             <h5>@product.Price.ToString("N0") $</h5>
                             <h5><span>Model :<Strong> @product.Name</Strong></span></h5>                      
-                        <div class="bike-cart">
-                            <a class="buy" href="single.html">BUY NOW</a>
-                        </div>
+                            <div class="bike-cart">
+                                <a class="add-cart" href="@url">Quick View</a>
+                                <a class="buy" href="@url">BUY NOW</a>
+                            </div>
                         <div class="clearfix"></div>
                     </div>
                 </div>

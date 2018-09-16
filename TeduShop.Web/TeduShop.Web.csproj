@@ -3999,6 +3999,7 @@
     <Content Include="Assets\client\js\move-top.js" />
     <Content Include="Assets\client\js\responsiveslides.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GITHUBTEST\github.js" />
     <Content Include="Global.asax" />
     <Content Include="Libs\CKFinder.dll" />
     <Content Include="Resources\db.sql" />
@@ -4020,7 +4021,6 @@
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\admin\js\pages\" />
-    <Folder Include="GITHUBTEST\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>

@@ -46,7 +46,9 @@ namespace TeduShop.Web.Controllers
         [ChildActionOnly]
         public ActionResult Header()
         {
-            return PartialView();
+            var model = _productCategoryService.GetAll();
+            var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+            return PartialView(listProductCategoryViewModel);
         }
 
     }

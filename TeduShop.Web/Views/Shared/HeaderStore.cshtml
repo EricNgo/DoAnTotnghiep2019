@@ -1,4 +1,5 @@
-﻿<div class="header">
+﻿@model IEnumerable<TeduShop.Web.Models.ProductCategoryViewModel>
+<div class="header">
     <div class="logo">
         <a href="index.html"><img src="~/Assets/client/images/logo.png" alt="" /></a>
     </div>
@@ -9,13 +10,24 @@
         <input id="mobile_menu" type="checkbox">
         <ul class="nav">
             <li class="dropdown1">
-                <a href="bicycles.html">BICYCLES</a>
-                <ul class="dropdown2">
-                    <li><a href="bicycles.html">FIXED / SINGLE SPEED</a></li>
-                    <li><a href="bicycles.html">CITY BIKES</a></li>
-                    <li><a href="bicycles.html">PREMIMUN SERIES</a></li>
-                </ul>
+                @foreach (var category in Model.Where(x => x.ParentID == null))
+                {
+                    <a href="Index">@category.Name</a>
+                    var childCategories = Model.Where(x => x.ParentID == category.ID);
+
+                    <ul class="dropdown2">
+                        @if (childCategories.Count() > 0)
+                        {
+                            foreach (var childCategory in childCategories)
+                            {
+                                var url = "/" + childCategory.Alias + ".pc-" + childCategory.ID + ".html/#";
+                                <li><a href="@url">@childCategory.Name</a></li>
+                            }
+                        }
+                    </ul>
+                }
             </li>
+            
             <li class="dropdown1">
                 <a href="parts.html">PARTS</a>
                 <ul class="dropdown2">
@@ -35,11 +47,11 @@
                 </ul>
             </li>
             <li class="dropdown1">
-                <a href="404.html">EXTRAS</a>
+                <a href="404.html">Your Account</a>
                 <ul class="dropdown2">
-                    <li><a href="404.html">CLASSIC BELL</a></li>
-                    <li><a href="404.html">BOTTLE CAGE</a></li>
-                    <li><a href="404.html">TRUCK GRIP</a></li>
+                    <li><a href="dang-nhap.html">Sign in</a></li>
+                    <li><a href="dang-ky.html">Sign up</a></li>
+
                 </ul>
             </li>
             <a class="shop" href="cart.html"><img src="~/Assets/client/images/cart.png" alt="" /></a>

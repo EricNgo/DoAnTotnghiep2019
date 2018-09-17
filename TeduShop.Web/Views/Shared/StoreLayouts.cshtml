@@ -14,6 +14,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Custom Theme files -->
     <link href="~/Assets/client/css/form.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="~/Assets/client/css/hover.css" rel="stylesheet" />
+
+
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -56,18 +60,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h2>BIKE-PARTS ALL</h2>
             <div class="bike-parts-sec">
     
-                <!--Trang Index(giữa) của Store-->
-                <div class="bike-parts">
-                    <div class="top">
-                        <ul>
-                            <li><a href="index">home</a></li>
-                            <li><a href="#"> / </a></li>
-                            <li><a href="#">parts</a></li>
-                        </ul>
-                    </div>
+                <!--Trang Index(giữa) của Store-->            
                  @RenderBody()
-                </div>
-                @RenderSection("storeProducts", required: false)
+
+                @*@RenderSection("storeProducts", required: false)*@
                 <!-- Lề trái category của Store-->
                 @{ Html.RenderAction("CategoryStore", "Store");}
                 <div class="clearfix"></div>

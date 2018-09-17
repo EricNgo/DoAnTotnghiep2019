@@ -3,8 +3,8 @@
     <section class="sky-form">
         @foreach (var category in Model.Where(x => x.ParentID == null))
         {
-              
-            <h3 class="m_2">@category.Name </h3>
+            var url1 = "/" + category.Alias + ".pc-" + category.ID + ".html" + "/";
+            <a href="@url1"><h3 class="m_2">@category.Name</h3></a>  
             var childCategories = Model.Where(x => x.ParentID == category.ID);
             <div class="row row1 scroll-pane">
                 <div class="col col-4">
@@ -12,10 +12,8 @@
                     {
                         foreach (var childCategory in childCategories)
                         {
-                            var url = "/" + childCategory.Alias + ".pc-" + childCategory.ID + ".html";
+                            var url = "/" + childCategory.Alias + ".pc-" + childCategory.ID + ".html" + "/";
                             <p><a  href="@url">@childCategory.Name</a></p>
-
-
                         }
                     }
                 </div>

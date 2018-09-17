@@ -3,9 +3,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/StoreLayouts.cshtml";
 }
-
-<div class="bike-apparels">
-    <div class="parts1">
+<div class="bike-parts">
+    <div class="bike-apparels">
+        <div class="parts1">
         @foreach (var product in Model.LastestProducts)
         {
             var url = "/" + product.Alias + ".p-" + product.ID + ".html";
@@ -13,153 +13,18 @@
                 <div class="part-sec">
                     <div><img src="@product.Image" alt="@product.Name" /></div>
                     <div class="bike-cost">
-                            <h5>@product.Price.ToString("N0") $</h5>
-                            <h5><span>Model :<Strong> @product.Name</Strong></span></h5>                      
-                            <div class="bike-cart">
-                                <a class="add-cart" href="@url">Quick View</a>
-                                <a class="buy" href="@url">BUY NOW</a>
-                            </div>
+                        <h5>@product.Price.ToString("N0") $</h5>
+                        <h5><span>Model :<Strong> @product.Name</Strong></span></h5>
+                        <div class="bike-cart">
+                            <a class="add-cart" href="@url">Quick View</a>
+                            <a class="buy" href="@url">BUY NOW</a>
+                        </div>
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </a>
         }
-            <div class="clearfix"></div>
-        </div>
-
-    <div class="parts2">
-        <a href="single.html">
-            <div class="part-sec">
-                <img src="~/Assets/client/images/p5.JPG" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Rear Derailleur<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec">
-                <img src="~/Assets/client/images/p6.JPG" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Race XC Crankset<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html#">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec none1">
-                <img src="~/Assets/client/images/p7.JPG" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Aero Handlebars<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec none1">
-                <img src="~/Assets/client/images/p8.jpg" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Grip Tires<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
         <div class="clearfix"></div>
     </div>
-
-    <div class="parts3">
-        <a href="single.html">
-            <div class="part-sec">
-                <img src="~/Assets/client/images/p9.jpg" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Bike Wheelset<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec">
-                <img src="~/Assets/client/images/p10.jpg" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>MTB Chainring<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec none1">
-                <img src="~/Assets/client/images/p11.jpg" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Suspensions<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec none1">
-                <img src="~/Assets/client/images/p12.jpg" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Helmets<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="parts4">
-        <a href="single.html">
-            <div class="part-sec bottom-line">
-                <img src="~/Assets/client/images/p13.jpg" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Middle Frames<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec bottom-line">
-                <img src="~/Assets/client/images/p14.jpg" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Brooks Saddle<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec bottom-line none1">
-                <img src="~/Assets/client/images/p15.jpg" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Motocross braces<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <a href="single.html">
-            <div class="part-sec none1">
-                <img src="~/Assets/client/images/p16.JPG" alt="" />
-                <div class="part-info">
-                    <a href="#"><h5>Bike Pumps<span>$200.00</span></h5></a>
-                    <a class="add-cart" href="single.html">Quick View</a>
-                    <a class="qck" href="single.html">BUY NOW</a>
-                </div>
-            </div>
-        </a>
-        <div class="clearfix"></div>
-    </div>
-
 </div>
-@section storeProducts
-{
-    }
+</div>

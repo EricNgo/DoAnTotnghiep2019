@@ -104,16 +104,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
 
-    @{ Html.RenderAction("Header", "Home");}
-    <div >
-        <div class="bikes">
-           
-                @RenderBody()
-            
-            @RenderSection("homeProducts", required: false)
+    @{Html.RenderAction("Header", "Home");}
+    <div></div>>
+        <div class="bikes">        
+                @RenderBody()     
+            @*@RenderSection("homeProducts", required: false)*@
         </div>
     </div>
-
     <!--/banner categories-->
     <div id="cate" class="categories">
         <div class="container">
@@ -144,10 +141,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-
     <!---->
     <!-- new bikes-->
-
     @{ Html.RenderAction("Footer", "Home");}
     <!---->
 

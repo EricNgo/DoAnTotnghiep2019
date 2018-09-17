@@ -20,10 +20,12 @@ namespace TeduShop.Web.Controllers
             IProductService productService,
             ICommonService commonService)
         {
-            _productCategoryService = productCategoryService;
-            _productService = productService;
-            _commonService = commonService;
+           this._productCategoryService = productCategoryService;
+            this._productService = productService;
+            this._commonService = commonService;
         }
+
+
         // GET: Store
         public ActionResult Index()
         {
@@ -51,7 +53,9 @@ namespace TeduShop.Web.Controllers
         [ChildActionOnly]
         public ActionResult HeaderStore()
         {
-            return PartialView();
+            var model = _productCategoryService.GetAll();
+            var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+            return PartialView(listProductCategoryViewModel);
         }
 
         [ChildActionOnly]

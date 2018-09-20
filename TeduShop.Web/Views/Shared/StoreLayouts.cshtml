@@ -17,7 +17,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="~/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="~/Assets/client/css/hover.css" rel="stylesheet" />
-
+    <link href="~/Assets/client/css/searchstyle.css" rel="stylesheet" />
 
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +42,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--/banner-->
     <div class="parts">
         <div class="container">
-            <h2>BIKE-PARTS ALL</h2>
+            @*<h2>BIKE-PARTS ALL</h2>*@
+        
+                <div class="searchss">
+                    <form action="/tim-kiem.html/" method="get">
+                        <input class="searchTermss" type="text" id="txtKeyword" name="keyword" placeholder="Search..." />
+
+                        <input class="searchButtonss" type="submit" value="Search" />
+                    </form>
+                </div>
+        
             <div class="bike-parts-sec">
 
                 <!--Trang Index(giữa) của Store-->

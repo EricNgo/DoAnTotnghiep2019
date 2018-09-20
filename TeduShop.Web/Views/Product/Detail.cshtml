@@ -72,7 +72,13 @@
                             <a href="cart.html">ADD TO CART</a>
                         </div>
                         <div class="bike-type">
-                            <p>Tag  ::<a href="#">@Model.Tags</a></p>
+                            <p>
+                                Tag ::
+                                @foreach (var tag in (IEnumerable<TeduShop.Web.Models.TagViewModel>)ViewBag.Tags)
+                                {
+                                    <a href="/tag/@(tag.ID).html/">@(tag.Name) </a>
+                                }
+                            </p>
                             <p>Products in stock ::<a href="#">@Model.Quantity  </a></p>
                         </div>
                         <h5>Description  ::</h5>

@@ -3924,6 +3924,7 @@
     <Content Include="Assets\client\css\form.css" />
     <Content Include="Assets\client\css\hover.css" />
     <Content Include="Assets\client\css\nav.css" />
+    <Content Include="Assets\client\css\searchstyle.css" />
     <Content Include="Assets\client\css\style.css" />
     <Content Include="Assets\client\images\a1.JPG" />
     <Content Include="Assets\client\images\a10.jpg" />
@@ -4355,6 +4356,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Product\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\ListByTag.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

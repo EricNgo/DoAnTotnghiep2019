@@ -31,6 +31,13 @@ namespace TeduShop.Service
         Product GetById(int id);
 
         void Save();
+        IEnumerable<Tag> GetListTagByProductId(int id);
+
+        Tag GetTag(string tagId);
+
+        void IncreaseView(int id);
+
+        IEnumerable<Product> GetListProductByTag(string tagId, int page, int pagesize, out int totalRow);
     }
 
     public class ProductService : IProductService
@@ -203,29 +210,32 @@ namespace TeduShop.Service
             var product = _productRepository.GetSingleById(id);
             return _productRepository.GetMulti(x => x.Status && x.ID != id && x.CategoryID == product.CategoryID).OrderByDescending(x => x.CreatedDate).Take(top);
         }
+        public IEnumerable<Tag> GetListTagByProductId(int id)
+        {
+            return _productTagRepository.GetMulti(x => x.ProductID == id, new string[] { "Tag" }).Select(y => y.Tag);
+        }
 
-        //public IEnumerable<Product> GetListProduct(int page, int pageSize, string sort, out int totalRow)
-        //{
-        //    var query= _productRepository.GetMulti(x => x.Status);
-        //    switch (sort)
-        //    {
-        //        case "popular":
-        //            query = query.OrderByDescending(x => x.ViewCount);
-        //            break;
-        //        case "discount":
-        //            query = query.OrderByDescending(x => x.PromotionPrice.HasValue);
-        //            break;
-        //        case "price":
-        //            query = query.OrderBy(x => x.Price);
-        //            break;
-        //        default:
-        //            query = query.OrderByDescending(x => x.CreatedDate);
-        //            break;
-        //    }
+        public void IncreaseView(int id)
+        {
+            var product = _productRepository.GetSingleById(id);
+            if (product.ViewCount.HasValue)
+                product.ViewCount += 1;
+            else
+                product.ViewCount = 1;
+        }
 
-        //    totalRow = query.Count();
+        public IEnumerable<Product> GetListProductByTag(string tagId, int page, int pageSize, out int totalRow)
+        {
+            var model = _productRepository.GetListProductByTag(tagId, page, pageSize, out totalRow);
+            return model;
+        }
 
-        //    return query.Skip((page - 1) * pageSize).Take(pageSize);
-        //}
+        public Tag GetTag(string tagId)
+        {
+            return _tagRepository.GetSingleByCondition(x => x.ID == tagId);
+        }
+
+
+
     }
 }

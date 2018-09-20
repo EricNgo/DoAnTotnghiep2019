@@ -9,7 +9,7 @@
     <ul id="flexiselDemo2">
         @foreach (var product in Model.LastestProducts)
         {
-            var url = "/" + product.Alias + ".p-" + product.ID + ".html";
+            var url = "/" + product.Alias + ".p-" + product.ID + ".html/";
             <li>
                 <img src="@product.Image">
                 <div class="bike-info">
@@ -43,7 +43,7 @@
     <ul id="flexiselDemo1">
         @foreach (var product in Model.TopSaleProducts)
         {
-            var url = "/" + product.Alias + ".p-" + product.ID + ".html";
+            var url = "/" + product.Alias + ".p-" + product.ID + ".html/";
             <li>
                 <img src="@product.Image">
                 <div class="bike-info">

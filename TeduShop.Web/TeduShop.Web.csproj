@@ -353,6 +353,8 @@
     <Content Include="Assets\admin\libs\angular\angular.js" />
     <Content Include="Assets\admin\libs\angular\angular.min.js" />
     <Content Include="Assets\admin\libs\angular\index.js" />
+    <Content Include="Assets\admin\libs\autocomplete.js" />
+    <Content Include="Assets\admin\libs\autocomplete.min.js" />
     <Content Include="Assets\admin\libs\bootbox\.gitignore" />
     <Content Include="Assets\admin\libs\bootbox\bootbox.js" />
     <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap-theme.css" />
@@ -3543,6 +3545,10 @@
     <Content Include="Assets\admin\libs\jquery\dist\jquery.min.js" />
     <Content Include="Assets\admin\libs\jquery\dist\jquery.slim.js" />
     <Content Include="Assets\admin\libs\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Assets\admin\libs\jquery\jquery-ui.css" />
+    <Content Include="Assets\admin\libs\jquery\jquery-ui.js" />
+    <Content Include="Assets\admin\libs\jquery\jquery-ui.min.css" />
+    <Content Include="Assets\admin\libs\jquery\jquery-ui.min.js" />
     <Content Include="Assets\admin\libs\jquery\LICENSE.txt" />
     <Content Include="Assets\admin\libs\jquery\sizzle\dist\sizzle.js" />
     <Content Include="Assets\admin\libs\jquery\sizzle\dist\sizzle.min.js" />
@@ -3996,6 +4002,7 @@
     <Content Include="Assets\client\images\slid.png" />
     <Content Include="Assets\client\js\bootstrap.min.js" />
     <Content Include="Assets\client\js\classie.js" />
+    <Content Include="Assets\client\js\common.js" />
     <Content Include="Assets\client\js\easing.js" />
     <Content Include="Assets\client\js\jquery.easydropdown.js" />
     <Content Include="Assets\client\js\jquery.etalage.min.js" />
@@ -4003,6 +4010,7 @@
     <Content Include="Assets\client\js\jquery.min.js" />
     <Content Include="Assets\client\js\move-top.js" />
     <Content Include="Assets\client\js\responsiveslides.min.js" />
+    <Content Include="Assets\client\js\scripts.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GITHUBTEST\github.js" />
     <Content Include="Global.asax" />
@@ -4338,6 +4346,15 @@
     <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\ProductLayouts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Detail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

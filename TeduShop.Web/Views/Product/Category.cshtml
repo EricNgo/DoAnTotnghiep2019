@@ -7,24 +7,25 @@
 <div class="bike-parts">
     @if (Model.Count > 0)
     {
-        <div class="top">
-            <ul>
-                <a href="/@(category.Alias).pc-@(category.ID).html/">@category.Name - <span>@Model.TotalCount sản phẩm</span> </a>
-                <br />
-                <li>Sort : </li>
-                <li><a href="?page=@Model.Page&sort=popular">Popular |</a></li>
-                <li><a href="?page=@Model.Page&sort=new">New |</a></li>
-                <li><a href="?page=@Model.Page&sort=discount">Discount |</a></li>
-                <li><a href="?page=@Model.Page&sort=price">Low Price</a></li>
-                <br />
+    <div class="top">
 
-            </ul>
-        </div>
+        <ul>
+            <a href="/@(category.Alias).pc-@(category.ID).html/">@category.Name - <span>@Model.TotalCount sản phẩm</span> </a>
+            <br />
+            <li>Sort : </li>
+            <li><a href="?page=@Model.Page&sort=popular">Popular |</a></li>
+            <li><a href="?page=@Model.Page&sort=new">New |</a></li>
+            <li><a href="?page=@Model.Page&sort=discount">Discount |</a></li>
+            <li><a href="?page=@Model.Page&sort=price">Low Price</a></li>
+            <br />
+
+        </ul>
+    </div>
         <div class="bike-apparels">
             <div class="parts1">
                 @foreach (var product in Model.Items)
                 {
-                    var url = "/" + product.Alias + ".p-" + product.ID + ".html";
+                    var url = "/" + product.Alias + ".p-" + product.ID + ".html/";
                     <a href="@url">
                         <div class="part-sec">
                             <div><img src="@product.Image" alt="@product.Name" /></div>

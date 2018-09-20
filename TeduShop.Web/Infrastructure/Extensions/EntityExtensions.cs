@@ -46,6 +46,7 @@ namespace TeduShop.Web.Infrastructure.Extensions
             productCategory.UpdatedBy = productCategoryVm.UpdatedBy;
             productCategory.MetaKeyword = productCategoryVm.MetaKeyword;
             productCategory.MetaDescription = productCategoryVm.MetaDescription;
+           
             productCategory.Status = productCategoryVm.Status;
 
         }
@@ -68,6 +69,7 @@ namespace TeduShop.Web.Infrastructure.Extensions
             post.MetaKeyword = postVm.MetaKeyword;
             post.MetaDescription = postVm.MetaDescription;
             post.Status = postVm.Status;
+           
         }
 
         public static void UpdateProduct(this Product product, ProductViewModel productVm)
@@ -95,6 +97,7 @@ namespace TeduShop.Web.Infrastructure.Extensions
             product.MetaDescription = productVm.MetaDescription;
             product.Status = productVm.Status;
             product.Tags = productVm.Tags;
+            product.Quantity = productVm.Quantity;
         }
     }
 }

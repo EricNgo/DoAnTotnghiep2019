@@ -9,6 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
     <title>Bike Shop a Ecommerce Category Flat Bootstarp Responsive Website Template| Parts :: w3layouts</title>
     <link href="~/Assets/client/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <script src="~/Assets/client/js/bootstrap.min.js"></script>
     <!-- jQuery (Bootstrap's JavaScript plugins) -->
     <script src="~/Assets/client/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
@@ -23,35 +24,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Bike-shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
     <!--webfont-->
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
     <!--webfont-->
     <!-- dropdown -->
-    <script src="~/Assets/client/js/jquery.easydropdown.js"></script>
-    <link href="~/Assets/client/css/nav.css" rel="stylesheet" type="text/css" media="all" />
-    <script src="~/Assets/client/js/scripts.js" type="text/javascript"></script>
     <!--js-->
 
 </head>
 <body>
     <!--banner-->
-    <script src="~/Assets/client/js/responsiveslides.min.js"></script>
-    <script>
-
-    $(function () {
-      $("#slider").responsiveSlides({
-      	auto: false,
-      	nav: true,
-      	speed: 500,
-        namespace: "callbacks",
-        pager: true,
-      });
-    });
-    </script>
     <div class="banner-bg banner-sec">
         <div class="container">
-          @{ Html.RenderAction("HeaderStore", "Store");}
+            @{ Html.RenderAction("HeaderStore", "Store");}
         </div>
     </div>
     <!--/banner-->
@@ -59,20 +44,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <h2>BIKE-PARTS ALL</h2>
             <div class="bike-parts-sec">
-    
-                <!--Trang Index(giữa) của Store-->            
-                 @RenderBody()
+
+                <!--Trang Index(giữa) của Store-->
+                @RenderBody()
 
                 @*@RenderSection("storeProducts", required: false)*@
                 <!-- Lề trái category của Store-->
                 @{ Html.RenderAction("CategoryStore", "Store");}
-                <div class="clearfix"></div>
             </div>
+            <div class="clearfix"></div>
         </div>
     </div>
+    <script src="~/Assets/admin/libs/autocomplete.js"></script>
+    <script src="~/Assets/admin/libs/autocomplete.min.js"></script>
+    <script src="~/Assets/client/js/scripts.js"></script>
+    <script src="~/Assets/admin/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Assets/admin/libs/jquery/jquery-ui.js"></script>
+    <script src="~/Assets/admin/libs/jquery/jquery-ui.min.js"></script>
+    <script src="~/Assets/client/js/common.js"></script>
+    <script src="~/Assets/client/js/responsiveslides.min.js"></script>
+    <script src="~/Assets/client/js/jquery.easydropdown.js"></script>
+    <link href="~/Assets/client/css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/Assets/client/js/scripts.js" type="text/javascript"></script>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
     <!---->
-        @{ Html.RenderAction("FooterStore", "Store");}
+    @{ Html.RenderAction("FooterStore", "Store");}
     <!---->
+    <!--JQUERY-->
 
 </body>
 </html>

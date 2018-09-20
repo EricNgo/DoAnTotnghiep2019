@@ -32,12 +32,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--banner-->
 
     @{Html.RenderAction("Header", "Home");}
-    <div>
-        <div class="bikes">
-            @RenderBody()
-            @*@RenderSection("homeProducts", required: false)*@
-        </div>
-    </div>
+     @RenderBody()
+
+<!------- ---------------------------------->
     <script src="~/Assets/client/js/scripts.js" type="text/javascript"></script>
     <!--js-->
     <!---- start-smoth-scrolling---->
@@ -114,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!--/banner categories-->
-    <div id="cate" class="categories">
+    @*<div id="cate" class="categories">
         <div class="container">
             <h3>CATEGORIES</h3>
             <div class="categorie-grids">
@@ -142,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-    </div>
+    </div>*@
     <!---->
     <!-- new bikes-->
     @{ Html.RenderAction("Footer", "Home");}

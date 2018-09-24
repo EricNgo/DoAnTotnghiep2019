@@ -14,6 +14,13 @@ namespace TeduShop.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+        name: "Contact",
+        url: "lien-he.html",
+        defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+        namespaces: new string[] { "TeduShop.Web.Controllers" }
+       );
+
+            routes.MapRoute(
             name: "Page",
             url: "trang/{alias}.html",
            defaults: new { controller = "Page", action = "Index", alias = UrlParameter.Optional },

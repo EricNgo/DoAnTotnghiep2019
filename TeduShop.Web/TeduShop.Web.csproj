@@ -207,6 +207,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\ContactDetailViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\PageViewModel.cs" />
     <Compile Include="Models\StoreViewModel.cs" />
@@ -4006,6 +4008,7 @@
     <Content Include="Assets\client\js\bootstrap.min.js" />
     <Content Include="Assets\client\js\classie.js" />
     <Content Include="Assets\client\js\common.js" />
+    <Content Include="Assets\client\js\controllers\contact.js" />
     <Content Include="Assets\client\js\easing.js" />
     <Content Include="Assets\client\js\jquery.easydropdown.js" />
     <Content Include="Assets\client\js\jquery.etalage.min.js" />
@@ -4364,6 +4367,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Page\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

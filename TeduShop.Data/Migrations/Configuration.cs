@@ -21,6 +21,7 @@
             CreateProductCategorySample(context);
             CreateSlide(context);
             CreatePage(context);
+            CreateContactDetail(context);
             //  This method will be called after migrating to the latest version.
 
             //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
@@ -136,5 +137,45 @@
 
             }
         }
+
+        private void CreateContactDetail(TeduShopDbContext context)
+        {
+
+            if (context.ContactDetails.Count() == 0)
+            {
+                try
+                {
+                    var contactDetail = new TeduShop.Model.Models.ContactDetail()
+                    {
+                        Name = "Shop Trek Bikes",
+                        Address = "468B Cách mạng tháng 8, Quận 10 TPHCM",
+                        Email = "tedu@gmail.com",
+                        Lat = 10.7802934,
+                        Lng = 106.6734077,
+                        Phone = "0939289872",
+                        Website = "https://www.facebook.com/ericngo1996",
+                        Other = "",
+                        Status = true
+
+                    };
+                    context.ContactDetails.Add(contactDetail);
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+                        }
+                    }
+                }
+
+
+            }
+
+         }
     }
 }

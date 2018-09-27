@@ -26,7 +26,7 @@ namespace TeduShop.Web.Controllers
             _commonService = commonService;
         }
 
-        [OutputCache(Duration = 3600, Location = System.Web.UI.OutputCacheLocation.Client)]
+        [OutputCache(Duration = 3600, Location = System.Web.UI.OutputCacheLocation.Server)]
         public ActionResult Index()
         {
             var homeViewModel = new HomeViewModel();

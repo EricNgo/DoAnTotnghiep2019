@@ -84,10 +84,6 @@
       <Project>{7eb49ce5-4c7a-46d0-b381-eb19a5f8dfaa}</Project>
       <Name>TeduShop.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TeduShop.Web\TeduShop.Web.csproj">
-      <Project>{9fdd5a55-9084-4992-918d-02d0e6b0fad8}</Project>
-      <Name>TeduShop.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

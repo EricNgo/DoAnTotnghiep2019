@@ -149,7 +149,7 @@
                     {
                         Name = "Shop Trek Bikes",
                         Address = "468B Cách mạng tháng 8, Quận 10 TPHCM",
-                        Email = "tedu@gmail.com",
+                        Email = "ttgshop1996@gmail.com",
                         Lat = 10.7802934,
                         Lng = 106.6734077,
                         Phone = "0939289872",

@@ -20,7 +20,7 @@
             <div class="parts1">
                 @foreach (var product in Model.Items)
                 {
-                    var url = "/" + product.Alias + ".p-" + product.ID + ".html/";
+                    var url = "/" + product.Alias + ".p-" + product.ID + ".html";
                     <a href="@url">
                         <div class="part-sec">
                             <div><img src="@product.Image" alt="@product.Name" /></div>

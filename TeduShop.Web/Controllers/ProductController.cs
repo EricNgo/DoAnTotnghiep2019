@@ -88,7 +88,6 @@ namespace TeduShop.Web.Controllers
             return View(paginationSet);
         }
         public ActionResult Search(string keyword, int page = 1, string sort = "")
-
         {
             int pageSize = int.Parse(ConfigHelper.GetByKey("PageSize"));
             int totalRow = 0;

@@ -14,7 +14,7 @@
             <li class="dropdown1">
                 @foreach (var category in Model.Where(x => x.ParentID == null))
                 {
-                    <a href="Index">@category.Name</a>
+                    <a href="#">@category.Name</a>
                     var childCategories = Model.Where(x => x.ParentID == category.ID);
 
                     <ul class="dropdown2">

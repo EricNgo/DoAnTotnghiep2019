@@ -4,7 +4,7 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/ProductLayouts.cshtml";
 }
-
+<script src="~/Assets/client/js/controllers/shoppingCart.js"></script>
     <div class="container">
         <div class="ctnt-bar cntnt">
             <div class="content-bar">
@@ -69,7 +69,7 @@
                         <a class="length" href="#">S</a>
                         <div class="btn_form">
                             <a href="cart.html">buy now</a>
-                            <a href="cart.html">ADD TO CART</a>
+                            <a href="#" data-id="@Model.ID" id="btnAddToCart">ADD TO CART</a>
                         </div>
                         <div class="bike-type">
                             <p>
@@ -110,7 +110,7 @@
                     </div>
                     <div class="product_price">
                         <span class="price-access">$ @product.Price</span>
-                        <a class="button1" href="cart.html"><span>Add to cart</span></a>
+                        <a class="button1" href="#"  data-id="@Model.ID" id="btnAddToCart"><span>Add to cart</span></a>
                     </div>
                 </div>
 

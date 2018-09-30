@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201809271113192_Testfix.Designer.cs">
       <DependentUpon>201809271113192_Testfix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809290949214_addcustomerid.cs" />
+    <Compile Include="Migrations\201809290949214_addcustomerid.Designer.cs">
+      <DependentUpon>201809290949214_addcustomerid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ContactDetailRepository.cs" />
@@ -135,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809271113192_Testfix.resx">
       <DependentUpon>201809271113192_Testfix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809290949214_addcustomerid.resx">
+      <DependentUpon>201809290949214_addcustomerid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

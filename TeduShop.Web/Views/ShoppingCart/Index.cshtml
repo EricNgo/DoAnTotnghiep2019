@@ -3,12 +3,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/ProductLayouts.cshtml";
 }
-
-
-<div class="cart">
-</div>
-<div id="cartBody">
-</div>
 <script>
     $(document).ready(function (c) {
         $('.close1').on('click', function (c) {
@@ -18,61 +12,87 @@
         });
     });
 </script>
-
-<script id="tplCart" type="x-tmpl-mustache">
-    <div class="cart">
+<div class="cart">
+    <div id="cartContent">
         <div class="container">
             <div class="col-md-9 cart-items">
-                <div class="cart-top">
-                    <a href="index.html"><< home</a>
-                </div>
-                <div class="cart-header">
-                    <div class="close1"></div>
-                    <div class="cart-sec">
-                        <div class="cart-item cyc">
-                            <img src="{{Image}}" />
-                        </div>
-                        <div class="cart-item-info">
-                            <h3>{{ProductName}}<span>Model No: 3578</span></h3>
-                            <h4><span>Rs. $ </span>{{PriceF}}</h4>
-                            <p class="qty">Qty ::</p>
-                            @*<input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">*@
-                            <input type="number" data-id="{{ProductId}}" data-price="{{Price}}" value="{{Quantity}}" class="input txtQuantity" />
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="delivery">
-                            <p>Service Charges:: Rs.100.00</p>
-                            <span>Delivered in 2-3 bussiness days</span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
+                <h2>My Shopping Bag (2)</h2>
+                <button class="btn btn-danger" id="btnDeleteAll">Xóa giỏ hàng</button>
+                <div id="cartBody">
                 </div>
             </div>
             <div class="col-md-3 cart-total">
-                <a class="continue" href="#">Continue to basket</a>
+                <a class="continue" id="btnContinue">Continue to basket</a>
                 <div class="price-details">
                     <h3>Price Details</h3>
                     <span>Total</span>
-                    <span class="total" id="amount_{{ProductId}}">{{Amount}}</span>
+                    <span class="total">---</span>
                     <span>Discount</span>
                     <span class="total">---</span>
                     <span>Delivery Charges</span>
-                    <span class="total">150.00</span>
+                    <span class="total">FREE</span>
                     <div class="clearfix"></div>
                 </div>
                 <h4 class="last-price">TOTAL</h4>
-                <span class="total final">6350.00</span>
+                <span class="total final" id="lblTotalOrder"></span>
                 <div class="clearfix"></div>
-                <a class="order" href="#">Place Order</a>
-                <div class="total-item">
-                    <h3>OPTIONS</h3>
-                    <h4>COUPONS</h4>
-                    <a class="cpns" href="#">Apply Coupons</a>
-                    <p><a href="#">Log In</a> to use accounts - linked coupons</p>
+                <a class="order" id="btnCheckout">Check out</a>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="divCheckout" style="display:none;">
+        <div class="contact">
+            <div class="container">
+                <h3>CHECK OUT</h3>
+                <p>Please fill out your information and check out</p>
+                <form method="post" id="frmPayment">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <label>
+                            <input type="checkbox" id="chkUserLoginInfo" />
+                            Sử dụng thông tin đăng nhập
+                        </label><br />
+                    }
+                    <input type="text" id="txtName" name="name" placeholder="Your Full Name" required="">
+                    <input type="text" id="txtAddress" name="address" placeholder="Address" required="">
+                    <input type="text" id="txtEmail" name="email" placeholder="USER@DOMAIN" required="">
+                    <input type="text" id="txtPhone" name="phone" placeholder="Phone" required="">
+                    <textarea id="txtMessage" value="" placeholder="MESSAGE"></textarea>
+                    <input type="submit"  id="btnCreateOrder" value="check out">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"> </div>
+</div>
+<script id="tplCart" type="x-tmpl-mustache">
+
+        <div class="cart-header">
+            <div class="close1  btnDeleteItem" data-id="{{ProductId}}">
+            </div>
+            <div class="cart-sec">
+                <div class="cart-item cyc">
+                    <img src="{{Image}}" />
+                </div>
+                <div class="cart-item-info">
+                    <h3>{{ProductName}}<span>Model No: 3578</span></h3>
+                    <h5><span>Price: $ </span>{{PriceF}}</h5>
+                    <p class="qty">Quality::</p>
+                    @*<input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">*@
+                    <input type="number" min="1" data-id="{{ProductId}}" data-price="{{Price}}" value="{{Quantity}}" class="form-control input-small txtQuantity" />
+                    <h5 class="qty" id="amount_{{ProductId}}"><span><strong>Total: $ </strong></span>{{Amount}} </h5>
+                </div>
+                <div class="clearfix"></div>
+                <div class="delivery">
+
+                    <p>Service Charges:: Rs.100.00</p>
+                    <span>Delivered in 2-3 bussiness days</span>
+                    <div class="clearfix"></div>
                 </div>
             </div>
-
         </div>
-        </div>
-
 </script>
+
+
+

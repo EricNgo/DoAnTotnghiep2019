@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/StoreLayouts.cshtml";
     var category = (TeduShop.Web.Models.ProductCategoryViewModel)ViewBag.Category;
 }
+
+<div class="parts">
 <div class="bike-parts">
     @if (Model.Count > 0)
     {
@@ -98,4 +100,5 @@
     {
         <div class="text-center">Không có bản ghi nào được tìm thấy.</div>
     }
+</div>
 </div>

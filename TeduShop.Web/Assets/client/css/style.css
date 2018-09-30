@@ -874,8 +874,9 @@ display:block;
 
 .details-left-info {
 float: left;
-margin-left: 5%;
-width:58%;
+margin-left: 15%;
+padding-right:50px;
+/*width:58%;*/
 }
 .details-left-info  h3 {
 color: #000;
@@ -1160,6 +1161,7 @@ p.qty {
 	float:left;
 	  border-bottom: 1px solid;
   padding-bottom: 5px;
+  text-align:left;
 }
 .cart-item-info h3{
 	font-size:1em;
@@ -1171,15 +1173,16 @@ p.qty {
 	font-size:0.75em;
 	margin-top:3px;
 }
-.cart-item-info h4{
+.cart-item-info h4,h5{
 	color:#000;
 	font-size:1.8em;
 	margin:0.5em 0;
 	font-weight:500;
 	display:inline-block;
 	margin-right:3em;
+    padding-left:30px;
 }
-.cart-item-info h4 span{
+.cart-item-info h4,h5 span{
 	font-size:0.65em;
 	font-weight:400;
 } 

@@ -10,20 +10,20 @@
         $stateProvider.state('application_groups', {
             url: "/application_groups",
             templateUrl: "/app/components/application_groups/applicationGroupListView.html",
-            parent: 'base',
-            controller: "applicationGroupListController"
+            controller: "applicationGroupListController",
+                        parent: 'base'
         })
             .state('add_application_group', {
                 url: "/add_application_group",
-                parent: 'base',
-                templateUrl: "/app/components/application_groups/applicationGroupAddView.html",
-                controller: "applicationGroupAddController"
+                 templateUrl: "/app/components/application_groups/applicationGroupAddView.html",
+                controller: "applicationGroupAddController",
+                parent: 'base'
             })
             .state('edit_application_group', {
                 url: "/edit_application_group/:id",
                 templateUrl: "/app/components/application_groups/applicationGroupEditView.html",
                 controller: "applicationGroupEditController",
-                parent: 'base',
+                parent: 'base'
             });
     }
 })();

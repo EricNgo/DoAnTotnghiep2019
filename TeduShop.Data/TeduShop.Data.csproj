@@ -62,41 +62,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201809181505209_InitialDB.cs" />
-    <Compile Include="Migrations\201809181505209_InitialDB.Designer.cs">
-      <DependentUpon>201809181505209_InitialDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809200731508_addforeignkey.cs" />
-    <Compile Include="Migrations\201809200731508_addforeignkey.Designer.cs">
-      <DependentUpon>201809200731508_addforeignkey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809210405122_ContactDetail.cs" />
-    <Compile Include="Migrations\201809210405122_ContactDetail.Designer.cs">
-      <DependentUpon>201809210405122_ContactDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809240638493_feedback.cs" />
-    <Compile Include="Migrations\201809240638493_feedback.Designer.cs">
-      <DependentUpon>201809240638493_feedback.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809271113192_Testfix.cs" />
-    <Compile Include="Migrations\201809271113192_Testfix.Designer.cs">
-      <DependentUpon>201809271113192_Testfix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809290949214_addcustomerid.cs" />
-    <Compile Include="Migrations\201809290949214_addcustomerid.Designer.cs">
-      <DependentUpon>201809290949214_addcustomerid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810010614144_renameidentityuser-role-login.cs" />
-    <Compile Include="Migrations\201810010614144_renameidentityuser-role-login.Designer.cs">
-      <DependentUpon>201810010614144_renameidentityuser-role-login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810010617492_renameapplicationclaims.cs" />
-    <Compile Include="Migrations\201810010617492_renameapplicationclaims.Designer.cs">
-      <DependentUpon>201810010617492_renameapplicationclaims.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810010642199_addusergroup.cs" />
-    <Compile Include="Migrations\201810010642199_addusergroup.Designer.cs">
-      <DependentUpon>201810010642199_addusergroup.cs</DependentUpon>
+    <Compile Include="Migrations\201810011550488_InitialDB.cs" />
+    <Compile Include="Migrations\201810011550488_InitialDB.Designer.cs">
+      <DependentUpon>201810011550488_InitialDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,32 +109,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809181505209_InitialDB.resx">
-      <DependentUpon>201809181505209_InitialDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809200731508_addforeignkey.resx">
-      <DependentUpon>201809200731508_addforeignkey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809210405122_ContactDetail.resx">
-      <DependentUpon>201809210405122_ContactDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809240638493_feedback.resx">
-      <DependentUpon>201809240638493_feedback.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809271113192_Testfix.resx">
-      <DependentUpon>201809271113192_Testfix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809290949214_addcustomerid.resx">
-      <DependentUpon>201809290949214_addcustomerid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810010614144_renameidentityuser-role-login.resx">
-      <DependentUpon>201810010614144_renameidentityuser-role-login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810010617492_renameapplicationclaims.resx">
-      <DependentUpon>201810010617492_renameapplicationclaims.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810010642199_addusergroup.resx">
-      <DependentUpon>201810010642199_addusergroup.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810011550488_InitialDB.resx">
+      <DependentUpon>201810011550488_InitialDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

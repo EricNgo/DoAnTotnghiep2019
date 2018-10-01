@@ -5131,6 +5131,11 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\components\orders\" />
+    <Folder Include="app\components\roles\" />
+    <Folder Include="app\components\users\" />
+    <Folder Include="app\shared\footer\" />
+    <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\admin\libs\checklist-model\test\" />
     <Folder Include="UploadedFiles\" />
     <Folder Include="Views\About\" />

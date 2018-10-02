@@ -874,9 +874,9 @@ display:block;
 
 .details-left-info {
 float: left;
-margin-left: 15%;
-padding-right:50px;
-/*width:58%;*/
+margin-left: 12px;
+padding-left:10px;
+width:55%;
 }
 .details-left-info  h3 {
 color: #000;

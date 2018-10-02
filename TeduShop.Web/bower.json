@@ -16,6 +16,7 @@
     "jqueri-ui": "~1.12.1",
     "jquery-ui": "1.12.1",
     "mustache": "~3.0.0",
-    "numeral": "~3.0.0"
+    "numeral": "~1.5.3"
+
   }
 }

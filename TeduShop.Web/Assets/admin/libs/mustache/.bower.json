@@ -22,14 +22,14 @@
     "**/.*",
     "test"
   ],
-  "version": "2.2.1",
-  "_release": "2.2.1",
+  "version": "3.0.0",
+  "_release": "3.0.0",
   "_resolution": {
     "type": "version",
-    "tag": "v2.2.1",
-    "commit": "cd06b22dabdaeffe3e4c74ee02bd492a11bbb740"
+    "tag": "v3.0.0",
+    "commit": "17510f07d12ed3fb09866fec8226cf34cff90339"
   },
   "_source": "https://github.com/janl/mustache.js.git",
-  "_target": "~2.2.1",
+  "_target": "~3.0.0",
   "_originalSource": "mustache"
 }

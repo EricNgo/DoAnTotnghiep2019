@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201810011550488_InitialDB.Designer.cs">
       <DependentUpon>201810011550488_InitialDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810020710481_changeorderdetailandproduct.cs" />
+    <Compile Include="Migrations\201810020710481_changeorderdetailandproduct.Designer.cs">
+      <DependentUpon>201810020710481_changeorderdetailandproduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ApplicationGroupRepository.cs" />
@@ -111,6 +115,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810011550488_InitialDB.resx">
       <DependentUpon>201810011550488_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810020710481_changeorderdetailandproduct.resx">
+      <DependentUpon>201810020710481_changeorderdetailandproduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

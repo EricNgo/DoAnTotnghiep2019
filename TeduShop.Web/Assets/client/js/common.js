@@ -3,6 +3,28 @@
         common.registerEvents();
     },
     registerEvents: function () {
+
+        $('.btnAddToCart').off('click').on('click', function (e) {
+            e.preventDefault();
+            var productId = parseInt($(this).data('id'));
+            $.ajax({
+                url: '/ShoppingCart/Add',
+                data: {
+                    productId: productId
+                },
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    if (response.status) {
+                        alert('Thêm sản phẩm thành công.');
+                    }
+                    else {
+                        alert(response.message);
+                    }
+                }
+            });
+        });
+
         $("#txtKeyword").autocomplete({
             minLength: 0,
             source: function (request, response) {
@@ -30,23 +52,7 @@
                 .append("<a>" + item.label + "</a>")
                 .appendTo(ul);
         };
-        $('.btnAddToCart').off('click').on('click', function (e) {
-            e.preventDefault();
-            var productId = parseInt($(this).data('id'));
-            $.ajax({
-                url: '/ShoppingCart/Add',
-                data: {
-                    productId: productId
-                },
-                type: 'POST',
-                dataType: 'json',
-                success: function (response) {
-                    if (response.status) {
-                        alert('Thêm sản phẩm thành công.');
-                    }
-                }
-            });
-        });
+      
         $('#btnLogout').off('click').on('click', function (e) {
             e.preventDefault();
             $('#frmLogout').submit();

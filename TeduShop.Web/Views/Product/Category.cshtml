@@ -1,8 +1,12 @@
 ﻿@model TeduShop.Web.Infrastructure.Core.PaginationSet<TeduShop.Web.Models.ProductViewModel>
 @{
-    ViewBag.Title = "Category";
-    Layout = "~/Views/Shared/StoreLayouts.cshtml";
     var category = (TeduShop.Web.Models.ProductCategoryViewModel)ViewBag.Category;
+    var pageIndex = Model.Page;
+    ViewBag.Title = pageIndex == 1 ? category.Name : category.Name + " - Trang" + pageIndex; ;
+    ViewBag.MetaKeyword = pageIndex == 1 ? category.MetaKeyword : category.MetaKeyword + " - Trang" + pageIndex; ;
+    ViewBag.MetaDescription = pageIndex == 1 ? category.MetaDescription: category.MetaDescription + " - Trang" + pageIndex; ;
+    Layout = "~/Views/Shared/StoreLayouts.cshtml";
+
 }
 
 <div class="parts">

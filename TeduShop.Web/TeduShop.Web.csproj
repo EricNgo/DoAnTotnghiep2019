@@ -5211,9 +5211,6 @@
     <Content Include="Views\Shared\Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Store\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\StoreLayouts.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -54,6 +54,7 @@
                 .append("<a>" + item.label + "</a>")
                 .appendTo(ul);
         };
+      
     }
 }
 common.init();

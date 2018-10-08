@@ -11,6 +11,7 @@ using TeduShop.Model.Models;
 using TeduShop.Service;
 using TeduShop.Web.App_Start;
 using TeduShop.Web.Infrastructure.Extensions;
+using TeduShop.Web.Infrastructure.NganluongApi;
 using TeduShop.Web.Models;
 
 namespace TeduShop.Web.Controllers
@@ -60,9 +61,11 @@ namespace TeduShop.Web.Controllers
                 status = false
             });
         }
-        public JsonResult CreateOrder(string orderViewModel)
+        public ActionResult CreateOrder(string orderViewModel)
         {
             var order = new JavaScriptSerializer().Deserialize<OrderViewModel>(orderViewModel);
+
+            
             var orderNew = new Order();
 
             orderNew.UpdateOrder(order);
@@ -89,12 +92,67 @@ namespace TeduShop.Web.Controllers
             }
             if (isEnough)
             {
-                _orderService.Create(orderNew, orderDetails);
+              var orderReturn= _orderService.Create(ref orderNew, orderDetails);
                 _productService.Save();
-                return Json(new
+
+                if (order.PaymentMethod == "CASH")
                 {
-                    status = true
-                });
+                    return Json(new
+                    {
+                        status = true
+                    });
+                }
+                else
+                {
+                    var merchantId = ConfigHelper.GetByKey("MerchantId");
+                    var merchantPassword = ConfigHelper.GetByKey("MerchantPassword");
+                    var merchantEmail = ConfigHelper.GetByKey("MerchantEmail");
+                    var currentLink = ConfigHelper.GetByKey("CurrentLink");
+                    RequestInfo info = new RequestInfo();
+                    info.Merchant_id = merchantId;
+                    info.Merchant_password = merchantPassword;
+                    info.Receiver_email = merchantEmail;
+
+
+
+                    info.cur_code = "vnd";
+                    info.bank_code = order.BankCode;
+
+                    info.Order_code = orderReturn.ID.ToString();
+                    info.Total_amount = orderDetails.Sum(x=>x.Quantitty * x.Price).ToString();
+                    info.fee_shipping = "0";
+                    info.Discount_amount = "0";
+                    info.order_description = "Thanh toán đơn hàng tại TTG Shop";
+                    info.return_url = currentLink + "xac-nhan-don-hang.html";
+                    info.cancel_url = currentLink + "huy-don-hang.html";
+
+                    info.Buyer_fullname = order.CustomerName;
+                    info.Buyer_email = order.CustomerEmail;
+                    info.Buyer_mobile = order.CustomerMobile;
+
+                    APICheckoutV3 objNLChecout = new APICheckoutV3();
+                    ResponseInfo result = objNLChecout.GetUrlCheckout(info, order.PaymentMethod);
+
+                    if (result.Error_code == "00")
+                    {
+                        return Json(new
+                        {
+                            status = true,
+                            urlCheckout = result.Checkout_url,
+                            message = result.Description
+                        });
+                    }
+                    else
+                    {
+                        return Json(new
+                        {
+                            status = false,
+                            message = result.Description
+                        });
+                    }
+                        //txtserverkt.InnerHtml = result.Description;
+                }
+             
             }
             else
             {
@@ -212,5 +270,16 @@ namespace TeduShop.Web.Controllers
                 status = true
             });
         }
+
+        public ActionResult ConfirmOrder()
+        {
+            return View();
+        }
+
+        public ActionResult CancelOrder()
+        {
+            return View();
+        }
+
     }
 }

@@ -16,6 +16,21 @@ namespace TeduShop.Web
             routes.IgnoreRoute("{*botdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
 
             routes.MapRoute(
+       name: "Confirm Order",
+       url: "xac-nhan-don-hang.html",
+       defaults: new { controller = "ShoppingCart", action = "ConfirmOrder", id = UrlParameter.Optional },
+      namespaces: new string[] { "TeduShop.Web.Controllers" }
+  );
+            routes.MapRoute(
+name: "Cancel Order",
+url: "huy-don-hang.html",
+defaults: new { controller = "ShoppingCart", action = "CancelOrder", id = UrlParameter.Optional },
+namespaces: new string[] { "TeduShop.Web.Controllers" }
+);
+
+
+
+            routes.MapRoute(
          name: "Cart",
          url: "gio-hang.html",
          defaults: new { controller = "ShoppingCart", action = "Index", id = UrlParameter.Optional },

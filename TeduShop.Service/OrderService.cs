@@ -11,7 +11,7 @@ namespace TeduShop.Service
 {
     public interface IOrderService
     {
-        bool Create(Order order,List<OrderDetail> orderDetails);
+        Order Create(ref Order order,List<OrderDetail> orderDetails);
     }
     public class OrderService : IOrderService
     {
@@ -25,7 +25,7 @@ namespace TeduShop.Service
             this._orderDetailRepository = orderDetailRepository;
             this._unitOfWork = unitOfWork;
         }
-        public bool Create(Order order,List<OrderDetail> orderDetails)
+        public Order Create(ref Order order,List<OrderDetail> orderDetails)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace TeduShop.Service
                     _orderDetailRepository.Add(orderDetail);
                 }
                 _unitOfWork.Commit();
-                return true;
+                return order;
             }
             catch (Exception ex)
             {

@@ -12,6 +12,8 @@ namespace TeduShop.Service
     public interface IOrderService
     {
         Order Create(ref Order order,List<OrderDetail> orderDetails);
+        void UpdateStatus(int orderId);
+        void Save();
     }
     public class OrderService : IOrderService
     {
@@ -44,6 +46,17 @@ namespace TeduShop.Service
             {
                 throw;
             }
+        }
+        public void UpdateStatus(int orderId)
+        {
+            var order = _orderRepository.GetSingleById(orderId);
+            order.Status = true;
+            _orderRepository.Update(order);
+        }
+
+        public void Save()
+        {
+            _unitOfWork.Commit();
         }
     }
 }

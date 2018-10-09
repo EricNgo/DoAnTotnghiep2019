@@ -85,6 +85,7 @@
             }
 
         });
+
         $('input[name="paymentMethod"]').off('click').on('click', function () {
             if ($(this).val() == 'NL') {
                 $('.boxContent').hide();
@@ -94,11 +95,10 @@
                 $('.boxContent').hide();
                 $('#bankContent').show();
             }
-            else {      
+            else {
                 $('.boxContent').hide();
             }
-         });
-
+        });
     },
     getLoginUser: function () {
         $.ajax({
@@ -116,14 +116,15 @@
             }
         });
     },
+
     createOrder: function () {
         var order = {
-            CustomerName : $('#txtName').val(),
-            CustomerAddress : $('#txtAddress').val(),
-            CustomerEmail : $('#txtEmail').val(),
-            CustomerMobile : $('#txtPhone').val(),
-            CustomerMessage : $('#txtMessage').val(),
-            PaymentMethod: $('input[name="paymentMethod"]:checked').val(), 
+            CustomerName: $('#txtName').val(),
+            CustomerAddress: $('#txtAddress').val(),
+            CustomerEmail: $('#txtEmail').val(),
+            CustomerMobile: $('#txtPhone').val(),
+            CustomerMessage: $('#txtMessage').val(),
+            PaymentMethod: $('input[name="paymentMethod"]:checked').val(),
             BankCode: $('input[groupname="bankcode"]:checked').prop('id'),
             Status: false
         }
@@ -137,7 +138,8 @@
             success: function (response) {
                 if (response.status) {
                     if (response.urlCheckout != undefined && response.urlCheckout != '') {
-                        window.location.href = response.urlCheckout
+
+                        window.location.href = response.urlCheckout;
                     }
                     else {
                         console.log('create order ok');
@@ -145,9 +147,13 @@
                         cart.deleteAll();
                         setTimeout(function () {
                             $('#cartContent').html('Cảm ơn bạn đã đặt hàng thành công. Chúng tôi sẽ liên hệ sớm nhất.');
-                        }, 1500);
-
+                        }, 2000);
                     }
+
+                }
+                else {
+                    $('#divMessage').show();
+                    $('#divMessage').text(response.message);
                 }
             }
         });
